@@ -8,7 +8,7 @@ body {
     margin: 0;
 }
 
-.quiz-container {
+.container {
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
@@ -16,6 +16,42 @@ body {
     width: 90%;
     max-width: 600px;
     text-align: center;
+}
+
+/* Estilos para a tela de seleção de linguagem */
+.selection-screen {
+    padding: 20px;
+}
+
+.selection-screen h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.language-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.lang-btn {
+    background-color: #28a745; /* Cor verde para botões de linguagem */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.lang-btn:hover {
+    background-color: #218838;
+}
+
+/* Estilos do Quiz (já existentes, com pequenas otimizações) */
+.quiz-container {
+    /* display: none; será controlado via JS */
 }
 
 h1 {

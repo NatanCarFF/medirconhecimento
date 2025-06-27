@@ -1,0 +1,27 @@
+[
+  {
+    "question": "Qual palavra-chave é usada para declarar uma variável que pode ser reatribuída em JavaScript?",
+    "options": ["const", "let", "var", "static"],
+    "answer": "let"
+  },
+  {
+    "question": "Qual função é usada para exibir uma mensagem em um console em JavaScript?",
+    "options": ["print()", "log()", "display()", "console.log()"],
+    "answer": "console.log()"
+  },
+  {
+    "question": "Qual o resultado de `10 + '5'` em JavaScript?",
+    "options": ["15", "'105'", "Erro", "NaN"],
+    "answer": "'105'"
+  },
+  {
+    "question": "Como se chama o processo de pegar a funcionalidade de um objeto e disponibilizá-la para outro?",
+    "options": ["Encapsulamento", "Polimorfismo", "Herança", "Abstração"],
+    "answer": "Herança"
+  },
+  {
+    "question": "Qual método JavaScript é usado para remover o último elemento de um array e retornar esse elemento?",
+    "options": ["shift()", "unshift()", "pop()", "push()"],
+    "answer": "pop()"
+  }
+]

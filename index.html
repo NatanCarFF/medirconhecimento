@@ -3,24 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz de Conhecimento em Python</title>
+    <title>Quiz de Programação</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="quiz-container">
-        <h1>Quiz de Conhecimento em Python</h1>
-        <div id="progress-container">
-            Progresso: <span id="current-q-num">0</span> / <span id="total-q-num">0</span>
+    <div class="container">
+        <div id="language-selection" class="selection-screen">
+            <h1>Escolha a Linguagem do Quiz</h1>
+            <div class="language-options">
+                <button class="lang-btn" data-lang="python">Python</button>
+                <button class="lang-btn" data-lang="javascript">JavaScript</button>
+                </div>
         </div>
-        <div id="question-container">
-            <p id="question"></p>
-            <div id="options-container" class="options"></div>
-        </div>
-        <button id="next-button" class="btn">Próxima Pergunta</button>
-        <div id="result-container" class="result">
-            <h2>Quiz Concluído!</h2>
-            <p>Você acertou: <span id="score">0</span> de <span id="total-questions">0</span> perguntas</p>
-            <button id="restart-button" class="btn">Reiniciar Quiz</button>
+
+        <div id="quiz-container" class="quiz-container" style="display: none;">
+            <h1 id="quiz-title">Quiz de Conhecimento</h1>
+            <div id="progress-container">
+                Progresso: <span id="current-q-num">0</span> / <span id="total-q-num">0</span>
+            </div>
+            <div id="question-container">
+                <p id="question"></p>
+                <div id="options-container" class="options"></div>
+            </div>
+            <button id="next-button" class="btn">Próxima Pergunta</button>
+            <div id="result-container" class="result">
+                <h2>Quiz Concluído!</h2>
+                <p>Você acertou: <span id="score">0</span> de <span id="total-questions">0</span> perguntas</p>
+                <button id="restart-button" class="btn">Reiniciar Quiz</button>
+                <button id="back-to-menu-button" class="btn">Voltar ao Menu</button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
