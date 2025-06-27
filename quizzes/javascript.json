@@ -1,27 +1,34 @@
-[
-  {
-    "question": "Qual palavra-chave é usada para declarar uma variável que pode ser reatribuída em JavaScript?",
-    "options": ["const", "let", "var", "static"],
-    "answer": "let"
-  },
-  {
-    "question": "Qual função é usada para exibir uma mensagem em um console em JavaScript?",
-    "options": ["print()", "log()", "display()", "console.log()"],
-    "answer": "console.log()"
-  },
-  {
-    "question": "Qual o resultado de `10 + '5'` em JavaScript?",
-    "options": ["15", "'105'", "Erro", "NaN"],
-    "answer": "'105'"
-  },
-  {
-    "question": "Como se chama o processo de pegar a funcionalidade de um objeto e disponibilizá-la para outro?",
-    "options": ["Encapsulamento", "Polimorfismo", "Herança", "Abstração"],
-    "answer": "Herança"
-  },
-  {
-    "question": "Qual método JavaScript é usado para remover o último elemento de um array e retornar esse elemento?",
-    "options": ["shift()", "unshift()", "pop()", "push()"],
-    "answer": "pop()"
-  }
-]
+{
+  "questions": [
+    {
+      "question": "Qual palavra-chave é usada para declarar uma variável que pode ser reatribuída em JavaScript?",
+      "options": ["const", "let", "var", "static"],
+      "answer": "let",
+      "explanation": "A palavra-chave `let` foi introduzida no ES6 e permite declarar variáveis com escopo de bloco que podem ser reatribuídas."
+    },
+    {
+      "question": "Qual função é usada para exibir uma mensagem em um console em JavaScript?",
+      "options": ["print()", "log()", "display()", "console.log()"],
+      "answer": "console.log()",
+      "explanation": "A função `console.log()` é a maneira padrão em JavaScript para exibir mensagens no console do navegador."
+    },
+    {
+      "question": "Qual o resultado de `10 + '5'` em JavaScript?",
+      "options": ["15", "'105'", "Erro", "NaN"],
+      "answer": "'105'",
+      "explanation": "Em JavaScript, o operador `+` também é usado para concatenação de strings. Quando um número é adicionado a uma string, o número é convertido para string e os dois são concatenados."
+    },
+    {
+      "question": "Como se chama o processo de pegar a funcionalidade de um objeto e disponibilizá-la para outro?",
+      "options": ["Encapsulamento", "Polimorfismo", "Herança", "Abstração"],
+      "answer": "Herança",
+      "explanation": "Herança é um princípio fundamental da programação orientada a objetos onde um objeto (a classe filha ou subclasse) adquire propriedades e métodos de outro objeto (a classe pai ou superclasse)."
+    },
+    {
+      "question": "Qual método JavaScript é usado para remover o último elemento de um array e retornar esse elemento?",
+      "options": ["shift()", "unshift()", "pop()", "push()"],
+      "answer": "pop()",
+      "explanation": "O método `pop()` remove o último elemento de um array e retorna esse elemento. O comprimento do array é diminuído em 1."
+    }
+  ]
+}

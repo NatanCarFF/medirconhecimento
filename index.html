@@ -13,7 +13,7 @@
             <div class="language-options">
                 <button class="lang-btn" data-lang="python">Python</button>
                 <button class="lang-btn" data-lang="javascript">JavaScript</button>
-                </div>
+            </div>
         </div>
 
         <div id="quiz-container" class="quiz-container" style="display: none;">
@@ -25,7 +25,12 @@
                 <p id="question"></p>
                 <div id="options-container" class="options"></div>
             </div>
-            <button id="next-button" class="btn">Próxima Pergunta</button>
+            <button id="submit-button" class="btn">Verificar Resposta</button>
+            <div id="explanation-container" style="display: none; margin-top: 15px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; background-color: #f9f9f9; text-align: left;">
+                <p style="font-weight: bold;">Explicação:</p>
+                <p id="explanation-text"></p>
+            </div>
+            <button id="next-button" class="btn" style="display: none;">Próxima Pergunta</button>
             <div id="result-container" class="result">
                 <h2>Quiz Concluído!</h2>
                 <p>Você acertou: <span id="score">0</span> de <span id="total-questions">0</span> perguntas</p>

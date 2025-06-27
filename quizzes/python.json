@@ -1,42 +1,52 @@
-[
-  {
-    "question": "Qual dos seguintes NÃO é um tipo de dado principal em Python?",
-    "options": ["Lista", "Dicionário", "Tupla", "Array"],
-    "answer": "Array"
-  },
-  {
-    "question": "Qual a saída de `print(type([]))`?",
-    "options": ["<class 'list'>", "<class 'tuple'>", "<class 'dict'>", "<class 'str'>"],
-    "answer": "<class 'list'>"
-  },
-  {
-    "question": "Qual palavra-chave é usada para definir uma função em Python?",
-    "options": ["func", "define", "def", "function"],
-    "answer": "def"
-  },
-  {
-    "question": "O que 'PIP' significa em Python?",
-    "options": ["Python Installation Package", "Preferred Installer Program", "Python Interpreter Program", "Package Index for Python"],
-    "answer": "Preferred Installer Program"
-  },
-  {
-    "question": "Como você comenta várias linhas em Python?",
-    "options": ["// Este é um comentário", "/* Este é um comentário */", "# Este é um comentário", "'''Este é um comentário de várias linhas'''"],
-    "answer": "'''Este é um comentário de várias linhas'''"
-  },
-  {
-    "question": "Qual operador é usado para exponenciação em Python?",
-    "options": ["^", "**", "//", "%"],
-    "answer": "**"
-  },
-  {
-    "question": "Qual método é usado para adicionar um item ao final de uma lista em Python?",
-    "options": ["insert()", "append()", "add()", "extend()"],
-    "answer": "append()"
-  },
-  {
-    "question": "O que o método `len()` retorna para uma string 'Python'?",
-    "options": ["5", "6", "7", "Erro"],
-    "answer": "6"
-  }
-]
+{
+  "questions": [
+    {
+      "question": "Qual dos seguintes NÃO é um tipo de dado principal em Python?",
+      "options": ["Lista", "Dicionário", "Tupla", "Array"],
+      "answer": "Array",
+      "explanation": "Arrays não são um tipo de dado principal em Python como listas, dicionários e tuplas. Para usar arrays, você precisa importar o módulo `array` ou usar bibliotecas como NumPy."
+    },
+    {
+      "question": "Qual a saída de `print(type([]))`?",
+      "options": ["<class 'list'>", "<class 'tuple'>", "<class 'dict'>", "<class 'str'>"],
+      "answer": "<class 'list'>",
+      "explanation": "Colchetes `[]` são usados para definir listas em Python. Portanto, `type([])` retorna `<class 'list'>`."
+    },
+    {
+      "question": "Qual palavra-chave é usada para definir uma função em Python?",
+      "options": ["func", "define", "def", "function"],
+      "answer": "def",
+      "explanation": "A palavra-chave `def` é usada para iniciar a definição de uma nova função em Python."
+    },
+    {
+      "question": "O que 'PIP' significa em Python?",
+      "options": ["Python Installation Package", "Preferred Installer Program", "Python Interpreter Program", "Package Index for Python"],
+      "answer": "Preferred Installer Program",
+      "explanation": "'PIP' é o gerenciador de pacotes padrão para Python. Sua sigla significa 'Preferred Installer Program'."
+    },
+    {
+      "question": "Como você comenta várias linhas em Python?",
+      "options": ["// Este é um comentário", "/* Este é um comentário */", "# Este é um comentário", "'''Este é um comentário de várias linhas'''"],
+      "answer": "'''Este é um comentário de várias linhas'''",
+      "explanation": "Aspas triplas (simples `'''` ou duplas `\"\"\"`) são usadas para criar strings de várias linhas, que também são frequentemente usadas como comentários de várias linhas em Python."
+    },
+    {
+      "question": "Qual operador é usado para exponenciação em Python?",
+      "options": ["^", "**", "//", "%"],
+      "answer": "**",
+      "explanation": "O operador `**` é usado para realizar a exponenciação em Python (por exemplo, `2 ** 3` é igual a 8)."
+    },
+    {
+      "question": "Qual método é usado para adicionar um item ao final de uma lista em Python?",
+      "options": ["insert()", "append()", "add()", "extend()"],
+      "answer": "append()",
+      "explanation": "O método `append()` adiciona um único item ao final de uma lista existente."
+    },
+    {
+      "question": "O que o método `len()` retorna para uma string 'Python'?",
+      "options": ["5", "6", "7", "Erro"],
+      "answer": "6",
+      "explanation": "O método `len()` retorna o número de itens em uma sequência, que para a string 'Python' é 6 (cada letra é um item)."
+    }
+  ]
+}
