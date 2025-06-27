@@ -1,27 +1,42 @@
 [
   {
-    "question": "Which of the following is NOT a core data type in Python?",
-    "options": ["List", "Dictionary", "Tuple", "Array"],
+    "question": "Qual dos seguintes NÃO é um tipo de dado principal em Python?",
+    "options": ["Lista", "Dicionário", "Tupla", "Array"],
     "answer": "Array"
   },
   {
-    "question": "What is the output of `print(type([]))`?",
+    "question": "Qual a saída de `print(type([]))`?",
     "options": ["<class 'list'>", "<class 'tuple'>", "<class 'dict'>", "<class 'str'>"],
     "answer": "<class 'list'>"
   },
   {
-    "question": "Which keyword is used to define a function in Python?",
+    "question": "Qual palavra-chave é usada para definir uma função em Python?",
     "options": ["func", "define", "def", "function"],
     "answer": "def"
   },
   {
-    "question": "What does 'PIP' stand for in Python?",
+    "question": "O que 'PIP' significa em Python?",
     "options": ["Python Installation Package", "Preferred Installer Program", "Python Interpreter Program", "Package Index for Python"],
     "answer": "Preferred Installer Program"
   },
   {
-    "question": "How do you comment out multiple lines in Python?",
-    "options": ["// This is a comment", "/* This is a comment */", "# This is a comment", "'''This is a multi-line comment'''"],
-    "answer": "'''This is a multi-line comment'''"
+    "question": "Como você comenta várias linhas em Python?",
+    "options": ["// Este é um comentário", "/* Este é um comentário */", "# Este é um comentário", "'''Este é um comentário de várias linhas'''"],
+    "answer": "'''Este é um comentário de várias linhas'''"
+  },
+  {
+    "question": "Qual operador é usado para exponenciação em Python?",
+    "options": ["^", "**", "//", "%"],
+    "answer": "**"
+  },
+  {
+    "question": "Qual método é usado para adicionar um item ao final de uma lista em Python?",
+    "options": ["insert()", "append()", "add()", "extend()"],
+    "answer": "append()"
+  },
+  {
+    "question": "O que o método `len()` retorna para uma string 'Python'?",
+    "options": ["5", "6", "7", "Erro"],
+    "answer": "6"
   }
 ]

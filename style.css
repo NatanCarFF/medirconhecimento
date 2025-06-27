@@ -23,6 +23,12 @@ h1 {
     margin-bottom: 25px;
 }
 
+#progress-container {
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    color: #666;
+}
+
 #question-container {
     margin-bottom: 25px;
 }
@@ -55,7 +61,7 @@ h1 {
 
 .option-btn.selected {
     background-color: #a7d9ff;
-    border-color: #4CAF50; /* Changed to green for selected */
+    border-color: #007bff;
 }
 
 .option-btn.correct {

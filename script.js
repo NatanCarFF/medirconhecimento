@@ -6,21 +6,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoreSpan = document.getElementById('score');
     const totalQuestionsSpan = document.getElementById('total-questions');
     const restartButton = document.getElementById('restart-button');
+    const currentQNumSpan = document.getElementById('current-q-num');
+    const totalQNumSpan = document.getElementById('total-q-num');
 
     let questions = [];
     let currentQuestionIndex = 0;
     let score = 0;
-    let selectedOption = null; // To keep track of the currently selected option
+    let selectedOption = null;
 
-    // Fetch questions from JSON file
+    // Função para buscar perguntas do arquivo JSON
     async function fetchQuestions() {
         try {
             const response = await fetch('questions.json');
             questions = await response.json();
+            // Embaralha as perguntas para que apareçam em ordem diferente a cada vez
+            shuffleArray(questions);
             startQuiz();
         } catch (error) {
-            console.error('Error fetching questions:', error);
-            questionElement.textContent = 'Failed to load quiz questions.';
+            console.error('Erro ao buscar perguntas:', error);
+            questionElement.textContent = 'Falha ao carregar as perguntas do quiz.';
+        }
+    }
+
+    // Função para embaralhar um array (algoritmo Fisher-Yates)
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
         }
     }
 
@@ -29,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         score = 0;
         resultContainer.style.display = 'none';
         nextButton.style.display = 'block';
+        totalQNumSpan.textContent = questions.length; // Define o total de perguntas
         displayQuestion();
     }
 
@@ -36,44 +49,51 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentQuestionIndex < questions.length) {
             const currentQuestion = questions[currentQuestionIndex];
             questionElement.textContent = currentQuestion.question;
-            optionsContainer.innerHTML = ''; // Clear previous options
-            selectedOption = null; // Reset selected option
+            optionsContainer.innerHTML = ''; // Limpa opções anteriores
+            selectedOption = null; // Reseta a opção selecionada
 
-            currentQuestion.options.forEach(option => {
+            // Atualiza o número da pergunta atual
+            currentQNumSpan.textContent = currentQuestionIndex + 1;
+
+            // Embaralha as opções para cada pergunta
+            const shuffledOptions = [...currentQuestion.options];
+            shuffleArray(shuffledOptions);
+
+            shuffledOptions.forEach(option => {
                 const button = document.createElement('button');
                 button.textContent = option;
                 button.classList.add('option-btn');
-                button.addEventListener('click', () => selectOption(button, option, currentQuestion.answer));
+                button.addEventListener('click', () => selectOption(button));
                 optionsContainer.appendChild(button);
             });
-            nextButton.textContent = 'Next Question'; // Reset button text
-            nextButton.disabled = true; // Disable next button until an option is selected
+            nextButton.textContent = 'Próxima Pergunta';
+            nextButton.disabled = true; // Desabilita o botão "Próxima" até que uma opção seja selecionada
         } else {
             showResult();
         }
     }
 
-    function selectOption(button, selectedAnswer, correctAnswer) {
-        // Remove 'selected' class from previously selected option
+    function selectOption(button) {
+        // Remove a classe 'selected' da opção previamente selecionada
         if (selectedOption) {
             selectedOption.classList.remove('selected');
         }
-        // Add 'selected' class to the new selected option
+        // Adiciona a classe 'selected' à nova opção selecionada
         button.classList.add('selected');
-        selectedOption = button; // Update selectedOption
+        selectedOption = button; // Atualiza selectedOption
 
-        // Enable the next button once an option is selected
+        // Habilita o botão "Próxima" uma vez que uma opção é selecionada
         nextButton.disabled = false;
     }
 
     nextButton.addEventListener('click', () => {
-        if (selectedOption) { // Only proceed if an option is selected
+        if (selectedOption) { // Somente prossiga se uma opção for selecionada
             const currentQuestion = questions[currentQuestionIndex];
             const userAnswer = selectedOption.textContent;
 
-            // Apply correct/incorrect styling to all options
+            // Aplica o estilo de correto/incorreto a todas as opções
             Array.from(optionsContainer.children).forEach(button => {
-                button.disabled = true; // Disable all buttons after an answer is selected
+                button.disabled = true; // Desabilita todos os botões após uma resposta ser selecionada
                 if (button.textContent === currentQuestion.answer) {
                     button.classList.add('correct');
                 } else if (button.classList.contains('selected')) {
@@ -81,16 +101,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Check answer and update score
+            // Verifica a resposta e atualiza a pontuação
             if (userAnswer === currentQuestion.answer) {
                 score++;
             }
 
-            // Move to next question after a short delay to show feedback
+            // Move para a próxima pergunta após um pequeno atraso para mostrar o feedback
             setTimeout(() => {
                 currentQuestionIndex++;
                 displayQuestion();
-            }, 1000); // 1-second delay
+            }, 1000); // 1 segundo de atraso
         }
     });
 
@@ -101,10 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
         resultContainer.style.display = 'block';
         scoreSpan.textContent = score;
         totalQuestionsSpan.textContent = questions.length;
+        currentQNumSpan.textContent = questions.length; // Garante que o progresso mostre o total
     }
 
     restartButton.addEventListener('click', startQuiz);
 
-    // Initial fetch of questions when the page loads
+    // Busca inicial das perguntas quando a página carrega
     fetchQuestions();
 });
