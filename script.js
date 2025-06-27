@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Erro ao buscar perguntas:', error);
             questionElement.textContent = `Falha ao carregar as perguntas do quiz de ${language}. Por favor, tente novamente.`;
             quizContainer.style.display = 'none';
-            languageSelectionScreen.style.display = 'block';
+            languageSelectionScreen.style.display = 'block'; // Volta para a seleção de linguagem
         }
     }
 
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nextButton.style.display = 'none'; // Garante que o botão "Próxima" esteja oculto no início
         submitButton.style.display = 'none'; // Oculta o botão de submit até uma opção ser selecionada
         explanationContainer.style.display = 'none'; // Oculta a explicação no início
-        totalQNumSpan.textContent = questions.length;
+        totalQNumSpan.textContent = questions.length; // Define o total de perguntas
         displayQuestion();
     }
 
@@ -81,14 +81,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentQuestionIndex < questions.length) {
             const currentQuestion = questions[currentQuestionIndex];
             questionElement.textContent = currentQuestion.question;
-            optionsContainer.innerHTML = '';
-            selectedOption = null;
+            optionsContainer.innerHTML = ''; // Limpa opções anteriores
+            selectedOption = null; // Reseta a opção selecionada
             submitButton.style.display = 'none'; // Oculta o botão de submit ao carregar uma nova pergunta
             explanationContainer.style.display = 'none'; // Oculta a explicação ao carregar uma nova pergunta
             nextButton.style.display = 'none'; // Oculta o botão de próxima pergunta
 
+            // Atualiza o número da pergunta atual
             currentQNumSpan.textContent = currentQuestionIndex + 1;
 
+            // Embaralha as opções para cada pergunta
             const shuffledOptions = [...currentQuestion.options];
             shuffleArray(shuffledOptions);
 
@@ -171,4 +173,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Ao carregar a página, a tela de seleção de linguagem já está visível por padrão via HTML.
+    // Nenhuma chamada inicial a fetchQuestions() é necessária aqui.
 });
